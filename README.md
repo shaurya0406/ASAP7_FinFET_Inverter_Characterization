@@ -258,8 +258,37 @@ Timing metrics:
 
 
 
-#### 4. Simulation Results:
 
+
+#### 4. Simulation Parameters for 7nm FinFET Inverter (ASAP7 PDK, BSIM4 CMG FinFET Model)
+
+The [Inverter_Pre_Layout_Sim_Results CSV file](sim_results/Inverter_Pre_Layout_Sim_Results.csv) in the `sim_results` folder contains the key simulation parameters of a 7nm FinFET Inverter using the ASAP7 Process Design Kit (PDK), based on the BSIM4 CMG FinFET Model. The parameters captured during the inverter characterization include device dimensions, voltage metrics, timing, and power details.
+
+##### CSV Columns:
+
+- **WPfet**: Width of the PFET (in number of fins).
+- **WNfet**: Width of the NFET (in number of fins).
+- **Vm**: Inverter switching threshold voltage (V).
+- **Id**: Drain current (A).
+- **Gain**: Voltage gain of the inverter.
+- **NMH**: Noise Margin High (V).
+- **NML**: Noise Margin Low (V).
+- **Gm**: Transconductance (S).
+- **tpd**: Propagation delay (s).
+- **tRise**: Rise time (s).
+- **tFall**: Fall time (s).
+- **Fsw**: Switching frequency (Hz).
+- **Power**: Power consumption (W).
+- **Rout**: Output resistance (Ω).
+
+##### Preview Data:
+| WPfet | WNfet | Vm       | Id       | Gain   | NMH  | NML  | Gm       | tpd        | tRise      | tFall      | Fsw        | Power      | Rout    |
+|-------|-------|----------|----------|--------|------|------|----------|------------|------------|------------|------------|------------|---------|
+| 14    | 14    | 0.344786 | 0.000226 | 6.4284 | NaN  | 0.246| 0.036184 | 6.93e-13   | 2.98e-12   | 2.79e-12   | 1.73e+11   | 1.98e-17   | 15.8751 |
+| 14    | 13    | 0.349913 | 0.000217 | 6.4273 | 0.266| 0.254| 0.033637 | 6.94e-13   | 2.98e-12   | 2.80e-12   | 1.73e+11   | 1.90e-17   | 1500.15 |
+| 14    | 12    | 0.355439 | 0.000208 | 6.4308 | 0.258| 0.262| 0.031090 | 6.95e-13   | 2.98e-12   | 2.80e-12   | 1.72e+11   | 1.83e-17   | 13.5661 |
+
+---
 
 </details>
 
