@@ -89,7 +89,7 @@ device_model="tcleval(
 ************************************************************
 **)
 .control
-pre_osdi /home/hprcse/Documents/test/bsimcmg.osdi
+pre_osdi ~/ASAP7_FinFET_Inverter_Characterization/Xschem_ASAP7/bsimcmg_arch64.osdi
 .endc
 
 )"
