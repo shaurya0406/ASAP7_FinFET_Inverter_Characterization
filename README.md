@@ -262,7 +262,7 @@ Timing metrics:
 
 #### 4. Simulation Parameters for 7nm FinFET Inverter (ASAP7 PDK, BSIM4 CMG FinFET Model)
 
-The [Inverter_Pre_Layout_Sim_Results CSV file](sim_results/Inverter_Pre_Layout_Sim_Results.csv) in the `sim_results` folder contains the key simulation parameters of a 7nm FinFET Inverter using the ASAP7 Process Design Kit (PDK), based on the BSIM4 CMG FinFET Model. The parameters captured during the inverter characterization include device dimensions, voltage metrics, timing, and power details.
+The [Inverter_Pre_Layout_Sim_Results CSV file](sim_results/inverter_pre_layout_sim_results.csv.csv) in the `sim_results` folder contains the key simulation parameters of a 7nm FinFET Inverter using the ASAP7 Process Design Kit (PDK), based on the BSIM4 CMG FinFET Model. The parameters captured during the inverter characterization include device dimensions, voltage metrics, timing, and power details.
 
 ##### CSV Columns:
 
