@@ -21,12 +21,6 @@ N 560 160 560 180 {
 lab=vdd}
 N 560 360 560 380 {
 lab=gnd}
-N 560 210 620 210 {
-lab=vout}
-N 620 210 620 250 {
-lab=vout}
-N 560 250 620 250 {
-lab=vout}
 N 560 370 620 370 {
 lab=gnd}
 N 560 300 560 310 {
@@ -37,6 +31,12 @@ N 560 340 620 340 {
 lab=gnd}
 N 620 340 620 370 {
 lab=gnd}
+N 560 210 660 210 {
+lab=vdd}
+N 660 180 660 210 {
+lab=vdd}
+N 560 180 660 180 {
+lab=vdd}
 C {asap_7nm_nfet.sym} 540 340 0 0 {name=nfet1 model=asap_7nm_nfet spiceprefix=X l=7e-009 nfin=13}
 C {asap_7nm_pfet.sym} 540 210 0 0 {name=pfet1 model=asap_7nm_pfet spiceprefix=X l=7e-009 nfin=14}
 C {devices/ipin.sym} 480 270 0 0 {name=p1 lab=vin}
