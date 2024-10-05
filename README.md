@@ -303,6 +303,9 @@ Upon satisfying the voltage conditions, the script calculates the following VTC:
 
 - `tran 0.02p 125p`: Runs a transient analysis for 125 picoseconds with a time step of 0.02 picoseconds.
 
+**Simulation Output | PFET_nfin = 14, NFET_nfin = 13 and Vth = 0.349V**
+![Inverter_Transient_Analysis](images/inverter_tran.png)
+
 Timing metrics:
 
 > **Note:** The first transition may include noise or an unstable response due to initialization effects or transient settling. To avoid inaccuracies caused by initial conditions, it is common to ignore the first transition and use RISE=2 (or FALL=2), which measures the second complete transition when the circuit has settled into its periodic behavior.
