@@ -353,6 +353,51 @@ Timing metrics:
 - `.end`: Marks the conclusion of the script.
 </details>
 
+<details>
+  <summary><strong> 9. AC Analysis </strong></summary>
+
+###### 9. AC Analysis
+
+The script runs an AC analysis across a range of fin configurations for both PFET and NFET transistors. The goal is to extract and record the maximum gate-source capacitance (`Cgs`) for each combination of fin counts.
+
+**AC Analysis Schematic**
+![Inverter_AC_Schematic](images/inverter_ac.png)
+
+The script performs the following steps:
+
+1. **Fin Count Modification**: The number of fins (`nfin`) for both the PFET and NFET transistors are varied in nested loops.
+2. **AC Simulation**: For each configuration, an AC analysis is run with 100 points per decade between 1 kHz and 1 MHz.
+3. **Capacitance Calculation**: Gate-source capacitance (`Cgs`) is calculated based on the imaginary component of the admittance (`ygs`).
+4. **Data Logging**: The maximum `Cgs` value for each fin combination is appended to a CSV file (`results_cgs.csv`).
+
+**AC Simulation Spice Deck**
+
+```spice
+.control
+run
+set filetype=ascii
+set appendwrite
+echo \"WPfet,WNfet,Cgs\" > results_cgs.csv
+
+foreach wpfet 15 14 13 ... 2
+  foreach wnfet 15 14 13 ... 2
+    alter n.x1.xpfet1.npmos_finfet nfin = $wpfet
+    alter n.x1.xnfet1.nnmos_finfet nfin = $wnfet
+    AC DEC 100 1e3 1e6
+    let igs = vac#branch
+    let cgs = abs(imag(igs/0.7)/(2*pi*100e6))
+    meas ac cgs_max MAX cgs
+    echo \"$wpfet,$wnfet,$&cgs_max\" >> results_cgs.csv
+  end
+end
+.endc
+.save all
+.end
+```
+
+</details>
+
+
 </details>
 
 </details>
